@@ -8,22 +8,33 @@
 html {
   -webkit-tap-highlight-color: transparent;
 }
+:root {
+  --primary-color: #402b3a;
+  --secondary-color: #ffc1b4;
+  --third-color: #ff9bd2;
+  --basic-color: #fff;
+}
 .container {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #315fbd, #bb30de);
+  background: linear-gradient(
+    135deg,
+    var(--third-color),
+    var(--secondary-color)
+  );
   padding: 10px;
 }
 .todo-app {
   width: 100%;
   max-width: 540px;
-  background: white;
+  background: var(--basic-color);
   margin: 100px auto 0px;
   padding: 40px 30px 70px;
   border-radius: 10px;
 }
 .todo-app h2 {
-  color: #002765;
+  font-size: 30px;
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -36,15 +47,16 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #edeef0;
+  background: var(--basic-color);
   border-radius: 30px;
   padding-left: 20px;
   margin-bottom: 25px;
+  border: 2px solid var(--primary-color);
 }
 .row input {
   flex: 1;
-  border: none;
   outline: none;
+  border: none;
   background: transparent;
   font-size: 14px;
   padding: 10px;
@@ -53,8 +65,8 @@ html {
   border: none;
   outline: none;
   padding: 16px 50px;
-  background: #ff5945;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--basic-color);
   font-size: 16px;
   cursor: pointer;
   border-radius: 40px;
@@ -72,15 +84,14 @@ ul li::before {
   position: absolute;
   height: 28px;
   width: 28px;
-  border-radius: 50%;
   background-image: url(image/unchecked.png);
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
   top: 12px;
   left: 8px;
 }
 ul li.checked {
-  color: #555;
+  color: var(--primary-color);
   text-decoration: line-through;
 }
 ul li.checked::before {
@@ -99,5 +110,65 @@ ul li span {
   border-radius: 50%;
 }
 ul li span:hover {
-  background: #edeef0;
+  background: var(--basic-color);
+}
+@media only screen and (max-width: 600px) {
+  .todo-app {
+    max-width: 440px;
+    margin: 80px auto 0px;
+    padding: 40px 30px 70px;
+  }
+  .row button {
+    padding: 13px 35px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .todo-app {
+    max-width: 400px;
+    padding: 40px 20px 70px;
+  }
+  .todo-app h2 {
+    font-size: 25px;
+  }
+  .row button {
+    padding: 11px 30px;
+    font-size: 14px;
+  }
+  ul li {
+    font-size: 14px;
+    padding: 12px 8px 12px 50px;
+  }
+  ul li::before {
+    height: 25px;
+    width: 25px;
+  }
+  ul li span {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .todo-app {
+    max-width: 350px;
+    padding: 40px 17px 70px;
+  }
+  .row button {
+    padding: 10px 25px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .todo-app {
+    max-width: 330px;
+    padding: 40px 12px 70px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .todo-app {
+    max-width: 300px;
+  }
+  .row button {
+    padding: 10px 15px;
+  }
 }
