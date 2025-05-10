@@ -121,9 +121,8 @@ ul li span:hover {
   width: 80%;
   margin: auto;
   color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+   text-align: justify;
+  font-weight: 400;
 }
 @media only screen and (max-width: 600px) {
   .todo-app {
