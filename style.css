@@ -118,7 +118,8 @@ ul li span:hover {
 }
 
 .footer {
-  width: 80%;
+    width: fit-content;
+  font-size: 12px;
   margin: auto;
   color: var(--primary-color);
    text-align: justify;
